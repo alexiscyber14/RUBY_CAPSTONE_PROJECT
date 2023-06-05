@@ -1,7 +1,6 @@
 require_relative 'render'
 require_relative 'book/book_ui'
 
-
 class Main
   def initialize
     @render = Render.new
