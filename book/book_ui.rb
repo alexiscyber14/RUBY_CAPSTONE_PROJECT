@@ -23,8 +23,8 @@ class BookUI
     @books.each_with_index do |book, idx|
       print "#{idx + 1}. "
       book.each { |key, value| print "#{key}: #{value} " }
-      puts "\n"
     end
+    puts "\n"
   end
 
   def list_labels
@@ -32,8 +32,8 @@ class BookUI
     @labels.each_with_index do |label, idx|
       print "#{idx + 1}. "
       label.each { |key, value| print "#{key}: #{value} " }
-      puts "\n"
     end
+    puts "\n"
   end
 
   def create_book
