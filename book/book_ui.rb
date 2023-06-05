@@ -19,7 +19,7 @@ class BookUI
 
   def list_books
     puts "\n"
-    puts "There are no books... yet\n\n" if @books.empty?
+    puts "No available books at the moment..\n\n" if @books.empty?
     @books.each_with_index do |book, idx|
       print "#{idx + 1}. "
       book.each { |key, value| print "#{key}: #{value} " }
@@ -28,7 +28,7 @@ class BookUI
   end
 
   def list_labels
-    puts 'There are currently no labels' if @labels.empty?
+    puts 'No available labels at the moment..' if @labels.empty?
     @labels.each_with_index do |label, idx|
       print "#{idx + 1}. "
       label.each { |key, value| print "#{key}: #{value} " }
