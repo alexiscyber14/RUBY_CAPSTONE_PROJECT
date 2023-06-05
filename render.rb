@@ -37,7 +37,7 @@ class Render
     when 5
       @book_ui.list_labels
     when 7
-      @book_ui.add_book
+      @book_ui.create_book
     when 10
       puts 'Exiting...'
       exit
