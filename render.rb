@@ -38,11 +38,6 @@ class Render
       @book_ui.list_labels
     when 7
       @book_ui.create_book
-    when 10
-      puts 'Exiting...'
-      exit
-    else
-      puts 'Invalid choice!'
     end
   end
 end
