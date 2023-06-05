@@ -25,6 +25,7 @@ class BookUI
       book.each { |key, value| print "#{key}: #{value} " }
     end
     puts "\n"
+    puts "\n"
   end
 
   def list_labels
@@ -33,6 +34,7 @@ class BookUI
       print "#{idx + 1}. "
       label.each { |key, value| print "#{key}: #{value} " }
     end
+    puts "\n"
     puts "\n"
   end
 
