@@ -8,9 +8,9 @@ class Main
   puts 'Welcome, choose any option below'
   def main
     loop do
-      list = @render.actions
+      @render.actions
       choice = @render.get_request('Enter your choice: ', :to_i)
-      
+
       case choice
       when 1..10
         @render.execute_action(choice)

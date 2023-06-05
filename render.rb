@@ -21,7 +21,4 @@ class Render
     input = gets.chomp
     input_type == :to_i ? input.to_i : input
   end
-
-  def execute_action(choice)
-  end
 end
