@@ -7,6 +7,7 @@ class Render
     check_files_existence
     @book_ui = BookUI.new
   end
+
   def actions
     options = [
       '1 - List all books',
@@ -29,7 +30,7 @@ class Render
     input_type == :to_i ? input.to_i : input
   end
 
-    def execute_action(choice)
+  def execute_action(choice)
     case choice
     when 1
       @book_ui.list_books
@@ -38,11 +39,10 @@ class Render
     when 7
       @book_ui.add_book
     when 10
-      puts "Exiting..."
+      puts 'Exiting...'
       exit
     else
-      puts "Invalid choice!"
+      puts 'Invalid choice!'
     end
   end
-
 end
