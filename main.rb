@@ -1,4 +1,6 @@
 require_relative 'render'
+require_relative 'book/book_ui'
+
 
 class Main
   def initialize
@@ -12,9 +14,9 @@ class Main
       choice = @render.get_request('Enter your choice: ', :to_i)
 
       case choice
-      when 1..10
+      when 1..9
         @render.execute_action(choice)
-      when 11
+      when 10
         break
       else
         puts 'Please enter a valid option'
