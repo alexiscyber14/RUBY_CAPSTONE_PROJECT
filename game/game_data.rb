@@ -31,7 +31,7 @@ class AddGame
 
   def list_games
     if games.empty?
-      puts "There are no games."
+      puts 'There are no games.'
     else
       games.each do |game|
         puts "Game: #{game.title.capitalize} | Publish Date: #{game.publish_date}"
@@ -41,7 +41,7 @@ class AddGame
 
   def list_all_authors
     if authors.empty?
-      puts "There are no authors."
+      puts 'There are no authors.'
     else
       authors.each do |author|
         puts "Author: #{author.first_name.capitalize} #{author.last_name.capitalize}"
@@ -66,8 +66,15 @@ class AddGame
     end
 
     games_data.each do |game_hash|
-      author = authors.find { |author| author.full_name == game_hash['author_name'] }
-      games << Game.new(game_hash['title'], game_hash['publish_date'], game_hash['last_played'], author, multiplayer: game_hash['multiplayer'])
+      author = authors.find { |a| a.full_name == game_hash['author_name'] }
+      games << Game.new(
+        game_hash['title'],
+        game_hash['publish_date'],
+        game_hash['last_played'],
+        author,
+        multiplayer: game_hash['multiplayer']
+      )
+      
     end
   end
 
