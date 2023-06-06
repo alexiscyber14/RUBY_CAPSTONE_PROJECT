@@ -30,7 +30,7 @@ class AddGame
     @games << game
     save_data
     puts "Game (#{game.title}) has been successfully created."
-  end  
+  end
 
   def list_games
     if games.empty?
