@@ -1,5 +1,4 @@
 require_relative 'book/book_ui'
-require_relative 'game/game_data'
 require_relative './modules/check_files_existence'
 
 class Render
@@ -7,7 +6,6 @@ class Render
   def initialize
     check_files_existence
     @book_ui = BookUI.new
-    @games = AddGame.new
   end
 
   def actions
@@ -36,16 +34,10 @@ class Render
     case choice
     when 1
       @book_ui.list_books
-    when 3
-      @games.list_games
     when 5
       @book_ui.list_labels
-    when 6
-      @games.list_all_authors
     when 7
       @book_ui.create_book
-    when 9
-      @games.create_game
     end
   end
 end
