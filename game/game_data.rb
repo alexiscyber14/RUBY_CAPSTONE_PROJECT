@@ -15,19 +15,18 @@ class AddGame
     request = Render.new
     game_title = request.get_request('Enter game title: ')
     publish_date = request.get_request('Enter game publish date [YYYY-MM-DD]: ')
-    published_date = Date.parse(publish_date)
     multiplayer = request.get_request('Does it have multiplayer? (y/n): ')
     last_played = request.get_request('Enter game last played date [YYYY-MM-DD]: ')
     last_played_at = Date.parse(last_played)
     author_first_name = request.get_request("Enter creator's first name: ")
     author_last_name = request.get_request("Enter creator's last name: ")
-  
+
     author = find_or_create_author(author_first_name, author_last_name)
     author_id = author.id
-  
+
     game = Game.new(game_title, publish_date, last_played_at, author_id, multiplayer: multiplayer)
     game.author = author
-  
+
     @games << game
     save_data
     puts "Game (#{game.title}) has been successfully created."
