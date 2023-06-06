@@ -1,4 +1,3 @@
-
 require_relative 'game_data'
 require_relative 'book/book_ui'
 require_relative './modules/check_files_existence'

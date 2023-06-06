@@ -42,7 +42,7 @@ class MusicUI
   def create_music_album
     print 'Enter album title: '
     album_title = gets.chomp
-    print 'Enter album publish date (yy-mm-dd): '
+    print 'Enter album publish date [YYYY-MM-DD]: '
     album_publish_date = gets.chomp
     print 'Enter album genre: '
     album_genre = gets.chomp
