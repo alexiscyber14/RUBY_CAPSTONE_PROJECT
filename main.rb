@@ -13,10 +13,8 @@ class Main
       choice = @render.get_request('Enter your choice: ', :to_i)
 
       case choice
-      when 1..9
+      when 1..10
         @render.execute_action(choice)
-      when 10
-        break
       else
         puts 'Please enter a valid option'
       end

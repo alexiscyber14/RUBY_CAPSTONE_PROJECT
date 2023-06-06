@@ -1,5 +1,6 @@
 require_relative './genre'
 require_relative './music_album'
+require 'json'
 
 class MusicUI
   def initialize
@@ -32,7 +33,7 @@ class MusicUI
     puts 'Music Albums'.center(32)
     count = 0
     @music_albums.each do |album|
-      puts "#{count += 1}: #{album.title} "
+      puts "#{count += 1}: Album title: #{album.title}  Release Date: #{album.publish_date}"
     end
     print 'press any key to return to the main menu... : '
     gets
@@ -47,13 +48,16 @@ class MusicUI
     print 'Enter album genre: '
     album_genre = gets.chomp
     print 'Is the album on spotify? (y/n): '
-    respone = gets.chomp
-    album_on_spotify = respone == 'y' || response == 'Y'
+    response = gets.chomp
+    album_on_spotify = %w[y Y].include?(response)
     album = MusicAlbum.new(album_title, album_publish_date, on_spotify: album_on_spotify)
-    genre = Genre.new(album_genre)
+    genre = @genres.find { |g| g.name == album_genre }
+    if genre.nil?
+      genre = Genre.new(album_genre)
+      @genres.push(genre)
+    end
     album.add_genre(genre)
     @music_albums.push(album)
-    @genres.push(genre)
   end
 
   def loop_create_music_album
@@ -72,6 +76,37 @@ class MusicUI
         break
       end
       system 'cls'
+    end
+  end
+
+  def preserve_music_album_genre
+    File.exist?('./music/music.json')
+    music = []
+    @music_albums.each do |album|
+      albums = { id: album.id, title: album.title, on_spotify: album.on_spotify, date: album.publish_date,
+                 genre: album.genre.name, genre_id: album.genre.id }
+      music << albums
+    end
+    return if music.empty?
+
+    music_data = JSON.generate(music)
+    File.write('./music/music.json', music_data)
+  end
+
+  def populate_music_album_genre
+    return unless File.exist?('./music/music.json')
+
+    music_data = File.read('./music/music.json')
+    music = JSON.parse(music_data, symbolize_names: true)
+    music.each do |album|
+      genre = @genres.find { |g| g.name == album[:genre] }
+      if genre.nil?
+        genre = Genre.new(album[:genre], album[:genre_id])
+        @genres << genre
+      end
+      music_album = MusicAlbum.new(album[:title], album[:date], album[:id], on_spotify: album[:on_spotify])
+      music_album.add_genre(genre)
+      @music_albums << music_album
     end
   end
 end

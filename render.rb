@@ -10,6 +10,7 @@ class Render
     @game_data = AddGame.new
     @book_ui = BookUI.new
     @music_ui = MusicUI.new
+    @music_ui.populate_music_album_genre
   end
 
   def actions
@@ -50,6 +51,10 @@ class Render
       @music_ui.loop_create_music_album
     when 9
       @game_data.create_game
+    when 10
+      puts 'Thank you for using our application'
+      @music_ui.preserve_music_album_genre
+      exit
     end
   end
 end
