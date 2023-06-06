@@ -103,7 +103,11 @@ To make your project accessible to others:
 - LinkedIn:[@Alex_Ssenyoondo](https://www.linkedin.com/in/alex-software/)
 - wellfound:[@alexiscyber14](https://angel.co/u/alexander-senyondo)
 
+👤 **Belden Mugauri**
 
+- GitHub: [@githubhandle](https://github.com/Munyabelden/)
+- Twitter: [@twitterhandle](https://twitter.com/munyaradzi045)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/munyaradzi-mugauri-828a7b24a/)
 
 
 ##  Contrubuting <a name="contributing"></a>

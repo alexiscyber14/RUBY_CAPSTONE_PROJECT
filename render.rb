@@ -1,3 +1,5 @@
+
+require_relative 'game_data'
 require_relative 'book/book_ui'
 require_relative './modules/check_files_existence'
 require_relative './music/music_ui'
@@ -6,6 +8,7 @@ class Render
   include Files
   def initialize
     check_files_existence
+    @game_data = AddGame.new
     @book_ui = BookUI.new
     @music_ui = MusicUI.new
   end
@@ -46,6 +49,8 @@ class Render
       @book_ui.create_book
     when 8
       @music_ui.loop_create_music_album
+    when 9
+      @game_data.create_game
     end
   end
 end
