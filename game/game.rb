@@ -3,7 +3,7 @@ require_relative '../item'
 
 class Game < Item
   attr_reader :id
-  attr_accessor :title, :multiplayer, :last_played_at 
+  attr_accessor :title, :multiplayer, :last_played_at
 
   def initialize(title, published_date, last_played_at, author_first_name, multiplayer: nil)
     super(published_date)
@@ -24,7 +24,7 @@ class Game < Item
   end
 
   def can_be_archived?
-    return true if @last_played_at < ((Date.today - 365) * 2)
+    return true if @last_played_at < (Date.today - (365 * 2))
 
     false
   end

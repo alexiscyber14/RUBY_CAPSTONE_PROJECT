@@ -29,7 +29,7 @@ RSpec.describe Author do
     end
   end
 
-  describe "#to_h" do
+  describe '#to_h' do
     it 'returns a hash representation of the author' do
       expected_hash = {
         id: be_between(1, 1000),

@@ -74,7 +74,6 @@ class AddGame
         author,
         multiplayer: game_hash['multiplayer']
       )
-      
     end
   end
 
