@@ -10,9 +10,9 @@ class Item
     @archived = false
   end
 
-  def genre=(genre)
+  def add_genre(genre)
     @genre = genre
-    @genre.items.push(self) unless @genre.items.include?(self)
+    @genre.add_item(self) unless @genre.items.include?(self)
   end
 
   def author=(author)

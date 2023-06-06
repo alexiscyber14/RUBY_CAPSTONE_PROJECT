@@ -17,3 +17,20 @@ CREATE TABLE book (
 ) 
 
 CREATE INDEX idx_book_label_id ON book (label_id);
+
+CREATE TABLE authors (
+  id INT,
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
+);
+
+CREATE TABLE games (
+  id INT,
+  title VARCHAR(150),
+  multiplayer BOOLEAN,
+  last_played_at DATE,
+  author_id INT,
+  FOREIGN KEY (author_id) REFERENCES author(id)
+);
+
+CREATE INDEX idx_games_author_id ON games (author_id);
