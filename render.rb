@@ -1,3 +1,5 @@
+
+require_relative 'game_data'
 require_relative 'book/book_ui'
 require_relative './modules/check_files_existence'
 
@@ -5,6 +7,7 @@ class Render
   include Files
   def initialize
     check_files_existence
+    @game_data = AddGame.new
     @book_ui = BookUI.new
   end
 
@@ -38,6 +41,8 @@ class Render
       @book_ui.list_labels
     when 7
       @book_ui.create_book
+    when 9
+      @game_data.create_game
     end
   end
 end
