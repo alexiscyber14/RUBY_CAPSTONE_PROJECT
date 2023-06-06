@@ -34,7 +34,7 @@ RSpec.describe Game do
   describe '#can_be_archived?' do
     context 'when last played more than 2 years ago' do
       it 'returns true' do
-        last_played_2_years_ago = (Date.today - 365 * 2 - 1).to_s
+        last_played_2_years_ago = (Date.today - (365 * 2) - 1).to_s
         game = Game.new(title, published_date, last_played_2_years_ago, author_first_name)
 
         expect(game.can_be_archived?).to eq(true)
