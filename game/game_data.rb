@@ -21,7 +21,7 @@ class AddGame
     author_last_name = request.get_request("Enter creator's last name: ")
 
     author = find_or_create_author(author_first_name, author_last_name)
-    game = Game.new(game_title, publish_date, last_played, author_first_name, multiplayer: multiplayer)
+    game = Game.new(game_title, publish_date, last_played, author, multiplayer: multiplayer)
     game.author = author
 
     @games << game
