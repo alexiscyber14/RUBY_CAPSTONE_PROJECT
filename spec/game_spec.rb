@@ -13,18 +13,18 @@ RSpec.describe Game do
 
       expect(game.title).to eq(title)
       expect(game.multiplayer).to eq(true)
-      expect(game.last_played_at).to eq(Date.parse(last_played_at))
+      expect(game.last_played_at).to eq(last_played_at)
     end
   end
 
   describe '#to_h' do
     it 'returns a hash representation of the game' do
-      game = Game.new(title, published_date, last_played_at, author_first_name, multiplayer: false)
+      game = Game.new(title, publish_date, last_played_at, author_first_name, multiplayer: false)
       expect_result = {
         id: game.id,
         title: title,
         multiplayer: false,
-        last_played_at: Date.parse(last_played_at)
+        last_played_at: last_played_at
       }
 
       expect(game.to_h).to eq(expect_result)
