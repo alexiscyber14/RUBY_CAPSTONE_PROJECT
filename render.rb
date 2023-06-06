@@ -1,11 +1,13 @@
 require_relative 'book/book_ui'
 require_relative './modules/check_files_existence'
+require_relative './music/music_ui'
 
 class Render
   include Files
   def initialize
     check_files_existence
     @book_ui = BookUI.new
+    @music_ui = MusicUI.new
   end
 
   def actions
@@ -34,10 +36,16 @@ class Render
     case choice
     when 1
       @book_ui.list_books
+    when 2
+      @music_ui.list_music_albums
+    when 4
+      @music_ui.list_genres
     when 5
       @book_ui.list_labels
     when 7
       @book_ui.create_book
+    when 8
+      @music_ui.loop_create_music_album
     end
   end
 end
