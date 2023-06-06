@@ -17,3 +17,21 @@ CREATE TABLE book (
 ) 
 
 CREATE INDEX idx_book_label_id ON book (label_id);
+
+CREATE TABLE Genre(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(150) NOT NULL,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE MusicAlbum (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(150) NOT NULL,
+    on_spotify BOOLEAN NOT NULL,
+    publish_date DATE NOT NULL,
+    genre_id VARCHAR(150),
+    PRIMARY KEY (id)
+    CONSTRAINT fk_genre_id FOREIGN KEY (genre_id) REFERENCES Genre(id)
+)
+
+CREATE INDEX album_genre_id ON MusicAlbum (genre_id);
