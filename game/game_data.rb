@@ -18,8 +18,8 @@ class AddGame
     multiplayer = request.get_request('Does it have multiplayer? (y/n): ')
     last_played = request.get_request('Enter game last played date [YYYY-MM-DD]: ')
     last_played_at = Date.parse(last_played)
-    author_first_name = request.get_request("Enter creator's first name: ")
-    author_last_name = request.get_request("Enter creator's last name: ")
+    author_first_name = request.get_request("Enter publsher's first name: ")
+    author_last_name = request.get_request("Enter publisher's last name: ")
 
     author = find_or_create_author(author_first_name, author_last_name)
     author_id = author.id
