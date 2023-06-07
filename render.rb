@@ -1,6 +1,7 @@
 require_relative 'book/book_ui'
 require_relative 'game/game_data'
 require_relative './modules/check_files_existence'
+require_relative './music/music_ui'
 
 class Render
   include Files
@@ -8,6 +9,8 @@ class Render
     check_files_existence
     @book_ui = BookUI.new
     @games = AddGame.new
+    @music_ui = MusicUI.new
+    @music_ui.populate_music_album_genre
   end
 
   def actions
@@ -36,16 +39,26 @@ class Render
     case choice
     when 1
       @book_ui.list_books
+    when 2
+      @music_ui.list_music_albums
     when 3
       @games.list_games
+    when 4
+      @music_ui.list_genres
     when 5
       @book_ui.list_labels
     when 6
       @games.list_all_authors
     when 7
       @book_ui.create_book
+    when 8
+      @music_ui.loop_create_music_album
     when 9
       @games.create_game
+    when 10
+      puts 'Thank you for using our application'
+      @music_ui.preserve_music_album_genre
+      exit
     end
   end
 end
