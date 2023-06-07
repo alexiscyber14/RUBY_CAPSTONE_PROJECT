@@ -34,3 +34,21 @@ CREATE TABLE games (
 );
 
 CREATE INDEX idx_games_author_id ON games (author_id);
+
+CREATE TABLE Genre(
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(150) NOT NULL,
+    PRIMARY KEY (id)
+)
+
+CREATE TABLE MusicAlbum (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(150) NOT NULL,
+    on_spotify BOOLEAN NOT NULL,
+    publish_date DATE NOT NULL,
+    genre_id VARCHAR(150),
+    PRIMARY KEY (id)
+    CONSTRAINT fk_genre_id FOREIGN KEY (genre_id) REFERENCES Genre(id)
+)
+
+CREATE INDEX album_genre_id ON MusicAlbum (genre_id);
