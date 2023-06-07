@@ -45,7 +45,7 @@ class BookUI
     @publisher = gets.chomp
     print 'Cover State: '
     @cover_state = gets.chomp
-    print 'Publish Date: '
+    print 'Publish Date [YYYY-MM-DD]: '
     @publish_date = gets.chomp
     puts "Book Label\n"
     print 'Title: '
