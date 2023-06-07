@@ -52,7 +52,7 @@
 
 
 ### Video Presentation <a name="presentation"></a>
-<a href="https://github.com/alexiscyber14/RUBY_CAPSTONE_PROJECT.git">Watch video</a>
+<a href="https://drive.google.com/file/d/15GFm68YxG-bTAl1tbXPP_v4cKHrwsX88/view?usp=sharing">Watch video</a>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
