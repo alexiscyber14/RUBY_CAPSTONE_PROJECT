@@ -19,13 +19,13 @@ CREATE TABLE book (
 CREATE INDEX idx_book_label_id ON book (label_id);
 
 CREATE TABLE authors (
-  id INT,
+  id INT GENERATED ALWAYS AS IDENTITY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
 );
 
 CREATE TABLE games (
-  id INT,
+  id INT GENERATED ALWAYS AS IDENTITY,
   title VARCHAR(150),
   multiplayer BOOLEAN,
   last_played_at DATE,
