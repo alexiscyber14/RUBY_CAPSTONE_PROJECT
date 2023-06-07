@@ -71,6 +71,7 @@ class AddGame
     games_data.each do |game_hash|
       author = authors.find { |a| a.full_name == game_hash['author_name'] }
       author || Author.new(game_hash['author_first_name'], game_hash['author_last_name'])
+
       games << Game.new(
         game_hash['title'],
         game_hash['publish_date'],
