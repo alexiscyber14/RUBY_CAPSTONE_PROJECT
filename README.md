@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+     - [Video Presentation](#presentation)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -42,17 +43,16 @@
 
 - **[accepts data from the user to create an album]**
 - **[save the data to a file when the user exits the program]**
+- **[accepts data from the user to create a book]**
+- **[User can also create labels related to a book and  the user can list the books and the labels and view them]**
+- **[User can also add multiple games and their authors and can list them when needed]**
+- **[saves the user input data to a file automatically after all inputs are verified by the program]**
 - **[retrieve data from the file when the program starts]**
-
-- **Incremental development: TDD promotes an incremental approach where functionality is implemented in small increments. Each increment is driven by a failing test, ensuring that new code is only added to satisfy specific requirements.**
-
-- **Clear specification: Tests serve as a specification for the desired behavior of the code. They act as living documentation, providing clear examples of how the code should behave in different scenarios.**
-
-- **Improved code quality: Writing tests before code encourages developers to think about design, modularity, and the desired API of the code. This often leads to more maintainable and loosely coupled code.**
-
-- **Refactoring support: TDD encourages regular refactoring to improve code quality without introducing bugs. With a suite of tests in place, developers can confidently refactor their code, knowing that any regression issues will be caught by the tests.**
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Video Presentation <a name="presentation"></a>
+<a href="">Watch video</a>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -130,6 +130,7 @@ Here are some potential future features that can be added to enhance the functio
 
 - [] **Addition of more tests**: Will expand the project classes to demostrate more of the design process.
 - [] **Add an artist class for the music album**
+- [] **Add add a class of favorites on the music, book, and games so that user can have a list of their favorites**
 - [] **Link it with a website**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
