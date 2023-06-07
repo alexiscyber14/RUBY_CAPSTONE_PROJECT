@@ -22,7 +22,7 @@ class BookUI
     puts "No available books at the moment..\n\n" if @books.empty?
     @books.each_with_index do |book, idx|
       print "#{idx + 1}. "
-      book.each { |key, value| print "#{key}: #{value} " }
+      book.each { |key, value| print "#{key}: #{value}, " }
       puts "\n"
     end
     puts "\n"
@@ -33,7 +33,7 @@ class BookUI
     puts 'No available labels at the moment..' if @labels.empty?
     @labels.each_with_index do |label, idx|
       print "#{idx + 1}. "
-      label.each { |key, value| print "#{key}: #{value} " }
+      label.each { |key, value| print "#{key}: #{value}, " }
       puts "\n"
     end
     puts "\n"
